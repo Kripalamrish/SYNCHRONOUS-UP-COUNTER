@@ -42,7 +42,7 @@ Step 5:  For different input combinations generate the timing diagram.
 
 *PROGRAM*
 
-~
+```
 module synchronous_up_counter (
     input clk,       // Clock input
     input reset,     // Active-high synchronous reset
@@ -59,7 +59,7 @@ end
 
 endmodule
 
-~
+```
 
 
 Developed by: KISHORE M
