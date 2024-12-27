@@ -1,16 +1,16 @@
 ### SYNCHRONOUS-UP-COUNTER
 
-**AIM:**
+*AIM:*
 
 To implement 4 bit synchronous up counter and validate functionality.
 
-**SOFTWARE REQUIRED:**
+*SOFTWARE REQUIRED:*
 
 Quartus prime
 
-**THEORY**
+*THEORY*
 
-**4 bit synchronous UP Counter**
+*4 bit synchronous UP Counter*
 
 If we enable each J-K flip-flop to toggle based on whether or not all preceding flip-flop outputs (Q) are “high,” we can obtain the same counting sequence as the asynchronous circuit without the ripple effect, since each flip-flop in this circuit will be clocked at exactly the same time:
 
@@ -26,21 +26,59 @@ Since the first (LSB) flip-flop needs to toggle at every clock pulse, its J and 
 The next flip-flop need only “recognize” that the first flip-flop’s Q output is high to be made ready to toggle, so no AND gate is needed.
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
-**Procedure**
+*Procedure*
 
-/* write all the steps invloved */
 
-**PROGRAM**
+Step 1:  Type the program in Quartus software.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Step 2:  Compile and run the program.
 
-Developed by: RegisterNumber:
-*/
+Step 3:  Generate the RTL schematic and save the logic diagram.
 
-**RTL LOGIC UP COUNTER**
+Step 4:  Create nodes for inputs and outputs to generate the timing diagram.
 
-**TIMING DIAGRAM FOR IP COUNTER**
+Step 5:  For different input combinations generate the timing diagram.
 
-**TRUTH TABLE**
 
-**RESULTS**
+*PROGRAM*
+
+~
+module synchronous_up_counter (
+    input clk,       // Clock input
+    input reset,     // Active-high synchronous reset
+    output reg [3:0] q  // 4-bit counter output
+);
+
+// Counter Logic
+always @(posedge clk) begin
+    if (reset)       // If reset is high, reset counter to 0
+        q <= 4'b0000;
+    else
+        q <= q + 1;  // Increment counter
+end
+
+endmodule
+
+~
+
+
+Developed by: KISHORE M
+
+RegisterNumber:24900763
+
+
+*RTL LOGIC UP COUNTER*
+
+![Screenshot 2024-12-17 112558](https://github.com/user-attachments/assets/f4f0a1d5-81ed-4c51-ab35-a25d2493f1a4)
+
+*TIMING DIAGRAM FOR IP COUNTER*
+
+![Screenshot 2024-12-17 112710](https://github.com/user-attachments/assets/07b12b98-605c-4959-9070-2b74f15e74e6)
+
+*TRUTH TABLE*
+
+![Screenshot 2024-12-17 112856](https://github.com/user-attachments/assets/a3911da6-6e0d-4dd1-bf5e-b47726d6b496)
+
+*RESULTS*
+
+Thus,4 bit synchronous up counter and validate functionality is verified.
