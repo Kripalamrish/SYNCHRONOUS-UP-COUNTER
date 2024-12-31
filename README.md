@@ -43,20 +43,16 @@ Step 5:  For different input combinations generate the timing diagram.
 *PROGRAM*
 
 ```
-module synchronous_up_counter (
-    input clk,       // Clock input
-    input reset,     // Active-high synchronous reset
-    output reg [3:0] q  // 4-bit counter output
-);
-
-// Counter Logic
-always @(posedge clk) begin
-    if (reset)       // If reset is high, reset counter to 0
-        q <= 4'b0000;
-    else
-        q <= q + 1;  // Increment counter
+module syn_counter(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
 end
-
 endmodule
 
 ```
@@ -69,11 +65,13 @@ RegisterNumber:24900763
 
 *RTL LOGIC UP COUNTER*
 
-![Screenshot 2024-12-17 112558](https://github.com/user-attachments/assets/f4f0a1d5-81ed-4c51-ab35-a25d2493f1a4)
+![image](https://github.com/user-attachments/assets/17e98ec2-d147-4fb9-b903-ae57f790f45b)
+
+
 
 *TIMING DIAGRAM FOR IP COUNTER*
 
-![Screenshot 2024-12-17 112710](https://github.com/user-attachments/assets/07b12b98-605c-4959-9070-2b74f15e74e6)
+![image](https://github.com/user-attachments/assets/7db92f5d-c5d5-4f49-a14d-0e034d9c2349)
 
 *TRUTH TABLE*
 
