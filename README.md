@@ -58,9 +58,9 @@ endmodule
 ```
 
 
-Developed by: KISHORE M
+Developed by: KRIPAL R
 
-RegisterNumber:24900763
+RegisterNumber:212224040165
 
 
 *RTL LOGIC UP COUNTER*
